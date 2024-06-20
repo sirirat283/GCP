@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Icon Link -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="login">
+        <div class="logo">
+            <i class='bx bx-user-circle'></i>
+            <h2>Sign up</h2>
+        </div>
+
+        <form action="index.html" method="post">
+            <div class="input_box">
+                <span>Email</span>
+                <div class="icon">
+                    <i class='bx bxs-user'></i>
+                    <input type="text" placeholder="Enter your email" required>
+                </div>
+            </div>
+            <div class="input_box">
+                <span>Password</span>
+                <div class="icon">
+                    <i class='bx bxs-lock-alt'></i>
+                    <input type="password" placeholder="Enter your password" required>
+                </div>
+            </div>
+            <div class="input_box">
+                <span>Repeat Password</span>
+                <div class="icon">
+                    <i class='bx bxs-lock-alt'></i>
+                    <input type="password" placeholder="Enter your password again" required>
+                </div>
+            </div>
+
+            <button type="submit">Sign up</button>
+
+            <p class="signup">Or sign up with social platforms</p>
+
+            <div class="social_icon">
+                <a href="https://www.facebook.com/v11.0/dialog/oauth?963743751803737&redirect_uri=YOUR_REDIRECT_URI&scope=email" id="facebook"><i class='bx bxl-facebook'></i></a>
+                <a href="https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=email&response_type=code" id="google"><i class='bx bxl-google'></i></a>
+                <a href="https://github.com/login/oauth/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=user" id="github"><i class='bx bxl-github'></i></a>
+            </div>
+
+
+            <div class="alreadyAccount">
+                <p>Already have an account? <a href="index.html">Log in</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
