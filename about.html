@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAV GCP DETECTION</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-image: url('mountain.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        header {
+            padding: 10px 0;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            color: #D4B0B5;
+            margin: 0;
+        }
+        .logo {
+            max-width: 80px;
+            margin-right: 10px;
+        }
+        nav {
+            padding: 10px 0;
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            border-radius: 50px;
+            border: 2px solid #fff;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            position: relative;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: yellow;
+        }
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: transparent;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover::before {
+            background-color: yellow;
+        }
+        nav a:last-child {
+            display: flex;
+            align-items: center;
+        }
+        nav a:last-child .logo {
+            margin-left: 2px;
+            text-decoration: none;
+        }
+        nav a:last-child::before {
+            display: none;
+        }
+        nav a:last-child:hover::before {
+            display: block;
+        }
+        .logo {
+            max-width: 80px;
+            margin-right: 0px;
+        }
+        main {
+            padding: 20px;
+        }
+        .text-left {
+            text-align: left;
+        }
+        .text-left h2 {
+            margin-left: 20px;
+        }
+        .text-left img {
+            float: left;
+            margin-right: 10px;
+            width: 500px;
+            height: auto;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+
+        .search-input {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            margin-right: 5px;
+        }
+
+        .search-button {
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #330066;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: yellow;
+            color: #330066;
+        }
+
+        .file-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .file-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #330066;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            width: calc(33% - 20px);
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .file-item:hover {
+            background-color: #330066;
+            color: #fff;
+        }
+
+        .file-item h3, .file-item p {
+            margin: 5px 0;
+        }
+
+        .content {
+            font-size: 24px;
+            margin-left: 20px; /* Adjust this value to move the content to the right */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center;">
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1>UAV GCP DETECTION</h1>
+        </div>
+        <nav style="padding: 0px 5px;">
+            <a href="home.php">Home</a>
+            <a href="newproject.html">New Project</a>
+            <a href="about.html">About</a>
+            <a href="setting.html">Setting</a>
+            <a href="logout.php">Log out</a>
+            <img src="profile.png" alt="Profile Logo" class="logo">
+        </nav>
+    </header>
+    <div class="content">
+        <h2>About Us</h2>
+        <p>
+            UAV GCP DETECTION is a web-application that we have developed. It is a system for detecting Ground Control Points (GCPs) from aerial images captured by drones, using Object Detection techniques.
+        </p>
+    </div>
+</body>
+</html>
+
+

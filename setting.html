@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAV GCP DETECTION</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            background-image: url('mountain.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            padding: 20px;
+            background-color: rgba(255, 105, 180, 0.8); /* สีชมพู */
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+        .edit-mode input[type="text"] {
+            border-bottom: 2px solid #ff1493; /* เพิ่มเข้าไปเมื่ออยู่ในโหมดแก้ไข */
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .back-button {
+            font-size: 36px;
+            cursor: pointer;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-right: 1150px;
+        }
+        .content-wrapper {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            line-height: 1.0;
+        }
+        .sidebar {
+            width: 25%;
+            padding-right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sidebar-item {
+            padding: 20px 15px; /* ลดระยะห่างของรายการ */
+            margin-bottom: 1px; /* ลดระยะห่างระหว่างรายการ */
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            line-height: 1.5
+        }
+        .sidebar-item.active {
+            background-color: #ff1493; /* สีชมพูเข้ม */
+            border-radius: 10px;
+        }
+        .sidebar-item span {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 30px;
+            background-image: url('default-profile-pic.jpg'); /* รูปโปรไฟล์เริ่มต้น */
+            background-size: cover;
+            background-position: center;
+        }
+        .username {
+            font-size: 32px;
+            margin-right: 20px;
+            background: none; /* ลบพื้นหลัง */
+            border: none; /* ไม่มีเส้นขอบ */
+            color: white; /* ตั้งค่าสีข้อความเป็นสีขาว */
+        }
+        .edit-button {
+            background-color: #ff1493; /* สีชมพูเข้ม */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 22px;
+        }
+        h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid white;
+            font-size: 24px;
+            line-height: 1.5; /* เพิ่ม line-height เพื่อระบุระยะห่างระหว่างบรรทัด */
+        }
+        .change-button {
+            background-color: #ff1493; /* สีชมพูเข้ม */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 22px;
+        }
+        input[type="file"] {
+            display: none; /* ซ่อน input file ไว้ก่อน */
+        }
+        input[type="text"], input[type="password"] {
+            border: none; /* ลบเส้นขอบ */
+            background: none; /* ลบพื้นหลัง */
+            outline: none; /* ลบเส้นโค้งรอบช่องการพิมพ์เมื่อโฟกัส */
+            color: white; /* ตั้งค่าสีข้อความเป็นสีขาว */
+            font-size: 24px; /* ขนาดตัวอักษร */
+        }
+        .clickable {
+            cursor: pointer; /* เปลี่ยน cursor เป็น pointer */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="back-button">◀</span>
+            <span class="title">UAV GCP DETECTION</span>
+        </div>
+        <div class="content-wrapper">
+            <div class="sidebar">
+                <div class="sidebar-item active" data-translate="My Account"><span>👤</span> My Account</div>
+                <div class="sidebar-item" data-translate="Language"><span>🌐</span> Language</div>
+                <div class="sidebar-item" data-translate="Connections"><span>🔗</span> Connections</div>
+                <div class="sidebar-item" data-translate="Security"><span>🔒</span> Security</div>
+            </div>
+            <div class="main-content">
+                <div>
+                    <div class="profile-header">
+                        <div class="profile-pic"></div>
+                        <span class="username">Username</span>
+                        <input type="text" value="abcdexx@gmail.com">
+                        <input type="file" id="profile-pic-input">
+                        <label for="profile-pic-input" class="edit-button">Edit</label>
+                    </div>
+                    <h3>Account Security</h3>
+                    <div class="setting-item">
+                        <span>Email</span>
+                        <input type="text" value="abcdexx@gmail.com">
+                        <button class="change-button">Change</button>
+                    </div>
+                    <div class="setting-item">
+                        <span>Password</span>
+                        <input type="password" value="••••••••••">
+                        <button class="change-button">Change</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="setting-item">
+                        <span>Log out</span>
+                        <span class="clickable" id="logout">▶</span>
+                    </div>
+                    <div class="setting-item">
+                        <span>Delete My Account</span>
+                        <span class="clickable" id="deleteAccount">▶</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    sidebarItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    item.classList.add('active');
+
+                    // เพิ่มเงื่อนไขสำหรับ Language
+                    if (item.textContent.includes('Language')) {
+                        window.location.href = 'language.html';
+                    }
+                });
+            });
+
+            const profilePicInput = document.getElementById('profile-pic-input');
+            const profilePic = document.querySelector('.profile-pic');
+
+            profilePicInput.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+
+                reader.onload = (e) => {
+                    profilePic.style.backgroundImage = `url('${e.target.result}')`;
+                };
+
+                reader.readAsDataURL(file);
+            });
+
+            const backButton = document.querySelector('.back-button');
+
+            backButton.addEventListener('click', () => {
+                window.location.href = 'home.php';
+            });
+
+            // Event listener for logout
+            const logout = document.getElementById('logout');
+            logout.addEventListener('click', () => {
+                window.location.href = 'logout.php';
+            });
+
+            // Event listener for delete account
+            const deleteAccount = document.getElementById('deleteAccount');
+            deleteAccount.addEventListener('click', () => {
+                window.location.href = 'language.html';
+            });
+        });
+    </script>
+</body>
+</html>
